@@ -1,0 +1,67 @@
+@startuml
+!pragma layout smetana
+
+abstract class Product{
+
+    - String name
+    - double price
+
+    + Product(name, price)
+    + double getPrice()
+
+}
+
+class Clothes{
+
+    - int size
+    - String color
+
+    + Clothes(name, price, size, color)
+    + toString()
+
+}
+
+class Electronic{
+
+    - int warrantyNoOfMonths
+
+    + Electronic(name, price, warrantyNoOfMonths)
+    + toString()
+
+}
+
+class Food{
+
+    - String expireDate
+
+    + Food(name, price, expireDate)
+    + toString()
+
+}
+
+class Basket{
+
+    - ArrayList<Product> products
+
+    + void addProduct(Product product)
+    + void printAll()
+    + double getTotalPrice()
+    + void printTotal()
+
+}
+
+class Main{
+
+    Basket basket
+
+    + static void main(String[] args)
+
+}
+
+Product <|-- Clothes : is-a
+Product <|-- Electronic : is-a
+Product <|-- Food : is-a
+Basket --> Product : has-a
+Main ..> Basket
+
+@enduml

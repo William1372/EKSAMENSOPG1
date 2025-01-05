@@ -11,7 +11,7 @@ public class Electronic extends Product{
 
     @Override
     public String toString(){
-        //TODO Ret så outputtet stemmer overens
+
         return name+", "+warrantyNoOfMonths+" months of warranty"+": "+price+" euro";
 
     }

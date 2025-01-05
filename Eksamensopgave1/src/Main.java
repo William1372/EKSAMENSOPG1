@@ -18,9 +18,6 @@ public class Main {
 
         basket.printAll();
 
-        double totalPrice = basket.getTotalPrice();
-        System.out.println("\nTotal: "+totalPrice+" euro");
-
     }
 
 }

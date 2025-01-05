@@ -4,29 +4,30 @@ public class Basket {
 
     ArrayList<Product> products = new ArrayList<>();
 
-public void addProduct(Product product){
+    public void addProduct(Product product){
 
-    products.add(product);
+        products.add(product);
 
-}
+    }
 
-public void printAll(){
+    public void printAll(){
 
-    System.out.println("\nClothes");
-    for(Product product : products){
-if(product != null) {
-    if (product instanceof Clothes) {
+        System.out.println("\nClothes");
+        for(Product product : products){
+            if(product != null) {
+                if (product instanceof Clothes) {
 
-        System.out.println(product);
+                    System.out.println(product);
+
+                }
+
+                }else{
+
+                    System.out.println("There are no clothes in the basket...");
+
+                }
 
         }
-       }else {
-
-        System.out.println("There are no clothes in the basket...");
-
-
-     }
-    }
 
     System.out.println("\nElectronics");
     for(Product product : products){
@@ -41,35 +42,46 @@ if(product != null) {
             System.out.println("There are no electronics in the basket...");
 
         }
+
     }
 
-    System.out.println("\nFood");
-    for(Product product : products){
-        if(product != null) {
-            if (product instanceof Food) {
+        System.out.println("\nFood");
+        for(Product product : products){
+            if(product != null) {
+                if (product instanceof Food) {
 
-                System.out.println(product);
+                    System.out.println(product);
+
+                }
+            }else{
+
+                System.out.println("No foods are in the basket...");
 
             }
-        }else{
-
-            System.out.println("No foods are in the basket...");
 
         }
-    }
 
-}
-
-public double getTotalPrice(){
-
-    double total = 0;
-
-    for(Product product : products){
-
-        total += product.getPrice();
+        printTotal();
 
     }
-    return total;
-}
+
+    public double getTotalPrice(){
+
+        double total = 0;
+        for(Product product : products){
+
+            total += product.getPrice();
+
+        }
+
+        return total;
+
+    }
+
+    public void printTotal(){
+
+        System.out.println("\nTotal: "+getTotalPrice()+" euro");
+
+    }
 
 }
